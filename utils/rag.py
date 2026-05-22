@@ -21,7 +21,7 @@ def search_similar_chunks(
     index,
     query_embedding,
     chunks,
-    top_k=3
+    top_k=1
 ):
 
     query_embedding = np.array(

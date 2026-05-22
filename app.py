@@ -118,13 +118,17 @@ def ask_question():
 
     # Ollama API
     response = requests.post(
-        "http://localhost:11434/api/generate",
-        json={
-            "model": "llama3",
-            "prompt": prompt,
-            "stream": False
+    "http://localhost:11434/api/generate",
+    json={
+        "model": "phi3",
+        "prompt": prompt,
+        "stream": False,
+        "options": {
+            "temperature": 0.3,
+            "num_predict": 120
         }
-    )
+    }
+)
 
     answer = response.json()["response"]
 

@@ -1,4 +1,4 @@
-def chunk_text(text, chunk_size=500):
+def chunk_text(text, chunk_size=200):
 
     chunks = []
 
