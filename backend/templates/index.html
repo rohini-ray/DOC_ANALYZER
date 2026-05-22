@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document Analyser</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>AI Document Analyser</h1>
+
+        <!-- Upload Form -->
+        <form action="/upload"
+              method="POST"
+              enctype="multipart/form-data">
+
+            <input type="file"
+                   name="document"
+                   required>
+
+            <button type="submit">
+                Upload
+            </button>
+
+        </form>
+
+        {% if upload_success %}
+        <p class="success">
+            Document uploaded successfully!
+        </p>
+        {% endif %}
+
+        <hr>
+
+        <!-- Question Section -->
+        <div class="question-box">
+
+            <h2>Ask Questions</h2>
+
+            <input type="text"
+                   id="question"
+                   placeholder="Ask something about document">
+
+            <button onclick="askQuestion()">
+                Ask
+            </button>
+
+        </div>
+
+        <div id="answer-box"></div>
+
+    </div>
+
+    <script src="/static/script.js"></script>
+
+</body>
+</html>
